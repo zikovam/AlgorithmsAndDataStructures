@@ -1,5 +1,7 @@
 package com.zikovam.algorithms;
 
+import java.math.BigInteger;
+
 public class Fibonacci {
     /**
      * Calculating Fibonacci number using table algorithm.
@@ -7,12 +9,18 @@ public class Fibonacci {
      * @param num - fibonacci index number.
      * @return fibonacci number by index (if num is negative, will return -1)
      */
-    public long calculateFibonacciNumberByTableAlgorithm(int num) {
+    public void runCalculateFibonacciNumberByTableAlgorithm(int num){
+        System.out.println(calculateFibonacciNumberByTableAlgorithm(num));
+    }
+
+    private BigInteger calculateFibonacciNumberByTableAlgorithm(int num) {
 
         //fibonacci 0
-        long fibonacciBeforeLast = 0;
+        BigInteger fibonacciBeforeLast = BigInteger.valueOf(0);
         //fibonacci 1
-        long fibonacciLast = 1;
+        BigInteger fibonacciLast = BigInteger.valueOf(1);
+
+        BigInteger temp;
 
         int counter = 2;
         if (num>=0) {
@@ -24,14 +32,14 @@ public class Fibonacci {
                 default:
                     while (counter < num) {
                         counter++;
-                        long temp = fibonacciBeforeLast + fibonacciLast;
+                        temp = fibonacciBeforeLast.add(fibonacciLast);
                         fibonacciBeforeLast = fibonacciLast;
                         fibonacciLast = temp;
                     }
                     return fibonacciLast;
             }
         }
-        return -1;
+        return BigInteger.valueOf(-1);
     }
 
     /**

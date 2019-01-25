@@ -1,7 +1,12 @@
 package com.zikovam.algorithms;
 
 public class GreatestCommonDivisor {
-    public long calculateEuclid(long num1, long num2) {
+
+    public void runCalculateGcdByEuclid(long num1, long num2){
+        System.out.println(calculateGcdByEuclid(num1, num2));
+    }
+
+    private long calculateGcdByEuclid(long num1, long num2) {
 
         if (num1 == 0) {
             return num2;
@@ -10,7 +15,7 @@ public class GreatestCommonDivisor {
             return num1;
         } else {
             return (num1 / num2 > 0) ?
-                    calculateEuclid(num1 % num2, num2) : calculateEuclid(num1, num2 % num1);
+                    calculateGcdByEuclid(num1 % num2, num2) : calculateGcdByEuclid(num1, num2 % num1);
         }
     }
 }

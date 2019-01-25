@@ -6,13 +6,19 @@ import com.zikovam.algorithms.GreatestCommonDivisor;
 public class Main {
 
     public static void main(String[] args) {
-        Fibonacci fibonacci = new Fibonacci();
-        System.out.println("Fibonacci: "
-                + fibonacci.calculateFibonacciNumberByTableAlgorithm(15));
+        System.out.println("FIBONACCI:");
+        long startTime = System.currentTimeMillis();
+        new Fibonacci().runCalculateFibonacciNumberByTableAlgorithm(10000);
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime + " ms");
 
-        GreatestCommonDivisor gcd = new GreatestCommonDivisor();
-        System.out.println("GCD: "
-                + gcd.calculateEuclid(14159572, 63967072));
+        System.out.println("-------------------------");
+
+        System.out.println("GCD:");
+        startTime = System.currentTimeMillis();
+        new GreatestCommonDivisor().runCalculateGcdByEuclid(14159572, 63967072);
+        endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime + " ms");
 
     }
 }

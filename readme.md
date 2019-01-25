@@ -5,3 +5,5 @@ Contains:
 - Fibonacci.java
     - calculateFibonacciNumberByTableAlgorithm
     - calculateLastDigitOfFibonacciNumber
+- GreatestCommonDivisor
+    - calculateGcdByEuclid
