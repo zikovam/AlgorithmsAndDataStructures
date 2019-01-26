@@ -3,6 +3,8 @@ package com.zikovam.app;
 import com.zikovam.algorithms.Fibonacci;
 import com.zikovam.algorithms.GreatestCommonDivisor;
 
+import java.math.BigInteger;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,7 +18,8 @@ public class Main {
 
         System.out.println("GCD:");
         startTime = System.currentTimeMillis();
-        new GreatestCommonDivisor().runCalculateGcdByEuclid(14159572, 63967072);
+        new GreatestCommonDivisor()
+                .runCalculateGcdByEuclid(new BigInteger("14159572"), new BigInteger("63967072"));
         endTime = System.currentTimeMillis();
         System.out.println(endTime - startTime + " ms");
 
